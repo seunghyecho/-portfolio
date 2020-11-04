@@ -1,0 +1,1188 @@
+@charset "utf-8";
+
+/*
+
+    layout작성순서(기업형)
+1.세로로 분할된 큰덩어리를 id값을 부여해서 위아래 배치 (패딩으로 위아래 여백설정)
+2.그안에 컨텐츠는 무조건 .inner 그룹화 (가로넓이는 1180px --> 1200그리드 활용)
+3.좌우로 플롯되는 요소가 있으면 무조건 wrap으로 감싸고 ::after로 float 해제
+4.특정 블록요소안에 자식요소가 들어갈때마다 부모요소의 높이값은 지워나감
+5.컬럼이 4개일때는 각 넓이값이 280px , 3개면 380px, 2개면 680px , 컬럼간간격 20px
+6.본문의 글자색을 입력할때 #777보다 어둡게 설정(명도대비 4.5:1)
+7.특정영역안에 좌우배치되는 요소가 하나라도 있으면 나머지 요소들도 무조건 float처리 후 wrap으로 패키징
+
+
+효율적인 반응형 작업순서
+1.웹에있는 모든 css구간을 테블릿 미디어쿼리 구간에 복붙
+2.소거법으로 고칠필요가 없는 css구문들을 지움
+3.모바일디바이스(테블릿,모바일) 가로폭은 무조건 총합이 100%(고정px값은 퍼센트로변환)
+4.높이값과 폰트크기는 가급적 고정px유지
+
+
+*/
+
+body {
+    overflow-x: hidden;
+}
+
+/* navi */
+#navi {
+    position: fixed;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+#navi > li > a {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #fff;
+    border: 1px solid rgb(165, 28, 28);
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+#navi > li.on > a {
+    height: 60px;
+    background: rgb(165, 28, 28);
+    border: 1px solid #fff;
+}
+
+/* visual */
+
+#visual {
+    width: 100%;
+    height: 900px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    margin-top: 0px;
+}
+#visual > .inner {
+    width: 100%;
+    height: 100%;
+}
+#visual > .inner > li {
+    width: 100%;
+    height: 100%;
+    padding: 450px 0px;
+    box-sizing: border-box;
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+}
+#visual > .inner li.on {
+    opacity: 1;
+    z-index: 2;
+}
+#visual > .inner > .box {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#visual > .inner > #box1 {
+    background-image: url(../img/photo-1544616639-8d0bf4c2f35a.jfif);
+    background-color: orange;
+}
+#visual > .inner > .box::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 60%;
+    height: 100%;
+    transform: skewX(30deg);
+    background-color: rgba(255, 43, 43, 0.15);
+    z-index: -1;
+}
+#visual > .inner > #box2 {
+    background-image: url(../img/visual2.jpg);
+    background-color: magenta;
+}
+#visual > .inner > #box3 {
+    background-image: url(../img/visual3.jpg);
+    background-color: blueviolet;
+}
+
+#visual > .inner > .box > .wrap {
+    width: 1080px;
+    margin: 0 auto;
+}
+#visual > .inner > .box > .wrap > .left {
+    float: left;
+    width: 600px;
+}
+#visual > .inner > .box > .wrap > .right {
+    float: right;
+    width: 180px;
+    margin-top: 50px;
+}
+#visual > .inner > .box > .wrap > .left h1 {
+    font: 45px/1 "Galada", "arial";
+    color: #fff;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+#visual > .inner > .box > .wrap > .left p {
+    font: 20px/1 "Comfortaa", "arial";
+    color: rgb(255, 246, 246);
+    transition: 0.5s;
+}
+#visual > .inner > .box > .wrap > .right h1 {
+    font: 20px/1 "arial";
+    color: #fff;
+    transition: 0.5s;
+}
+#visual > .inner > .box > .wrap > .right p {
+    font: bold 20px/1 "arial";
+    color: rgb(199, 34, 34);
+    transition: 0.5s;
+}
+#visual > .inner > .box > .wrap > .right a {
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    /* border-radius: 50%; */
+    text-align: center;
+    line-height: 50px;
+    float: right;
+    margin-top: -50px;
+    border-bottom: 2px solid #fff;
+    transition: 1s;
+}
+
+#visual > .inner > #box1 a {
+    /* background-color: rgba(255, 166, 0, 0.335); */
+    background-image: url(../img/visual2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#visual > .inner > #box2 a {
+    /* background-color: rgba(255, 0, 255, 0.335); */
+    background-image: url(../img/visual3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#visual > .inner > #box3 a {
+    /* background-color: rgba(137, 43, 226, 0.335); */
+    background-image: url(../img/photo-1544616639-8d0bf4c2f35a.jfif);
+    background-size: cover;
+    background-position: center;
+}
+#visual > .inner > .box a i {
+    font-size: 20px;
+    color: #fff;
+}
+
+/* wrap */
+.wrap {
+    margin-top: -50px;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+/* margin-top을 주고 난 후 section2, footer 간격에 오류가 생김 */
+
+/* content1 */
+#content1 {
+    width: 100%;
+    padding: 50px 0;
+    position: relative;
+    z-index: 2;
+}
+#content1 > .inner {
+    width: 1180px;
+    margin: 0 auto;
+    position: relative;
+}
+#content1 > .inner > .wrap::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    background-color: #fff;
+    width: calc(100% + 40px);
+    height: 70px;
+    z-index: -1;
+}
+#content1 > .inner > .wrap::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#content1 > .inner > .wrap > article {
+    float: left;
+    padding: 30px 30px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.5s;
+}
+
+#content1 > .inner > .wrap > article:nth-of-type(1) {
+    width: 380px;
+    height: 420px;
+    background-color: #efefef;
+    margin-right: 20px !important;
+}
+#content1 > .inner > .wrap > article:nth-of-type(1) h1 {
+    font: bold 16px/1 "Comfortaa", "arial";
+    color: #000 !important;
+    margin-bottom: 10px;
+}
+#content1 > .inner > .wrap > article:nth-of-type(1) h2 {
+    font: bold 12px/1 "Comfortaa", "arial";
+    color: #111 !important;
+    margin-bottom: 10px;
+}
+#content1 > .inner > .wrap > article:nth-of-type(1) p {
+    font: bold 12px/1 "Comfortaa", "arial";
+    color: #333 !important;
+    margin-bottom: 20px;
+}
+#content1 > .inner > .wrap > article:nth-of-type(2),
+#content1 > .inner > .wrap > article:nth-of-type(3),
+#content1 > .inner > .wrap > article:nth-of-type(4),
+#content1 > .inner > .wrap > article:nth-of-type(5) {
+    width: 380px;
+    height: 200px;
+    background-color: #eee;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+#content1 > .inner > .wrap > article:nth-of-type(2) {
+    background-image: url(../img/photo-1527353530964-cd2b2c58533b.jfif);
+}
+#content1 > .inner > .wrap > article:nth-of-type(3) {
+    background-image: url(../img/photo-1515600783-fab475a8ae72.jfif);
+}
+#content1 > .inner > .wrap > article:nth-of-type(4) {
+    background-image: url(../img/photo-1570034873052-db70e5c61323.jfif);
+}
+#content1 > .inner > .wrap > article:nth-of-type(5) {
+    background-image: url(../img/photo-1585859537639-590a4d2864af.jfif);
+}
+
+#content1 > .inner > .wrap > article:nth-of-type(2n-1) {
+    margin-right: 0px;
+    box-sizing: border-box;
+}
+#content1 > .inner > .wrap > article:first-child > h1 {
+    color: #fff;
+}
+#content1 > .inner > .wrap > article > h1 {
+    font: bold 16px/1 "Comfortaa", "arial";
+    color: #fff;
+    margin-bottom: 10px;
+}
+#content1 > .inner > .wrap > article > h2 {
+    font: bold 12px/1 "Comfortaa", "arial";
+    color: rgb(209, 209, 209);
+    margin-bottom: 10px;
+}
+#content1 > .inner > .wrap > article > p {
+    font: bold 10px/1 "Comfortaa", "arial";
+    color: rgb(207, 207, 207);
+    margin-bottom: 20px;
+}
+#content1 > .inner > .wrap > article a {
+    border-radius: 40px;
+    background: linear-gradient(90deg, rgb(199, 34, 34), rgb(252, 69, 13));
+    font: bold 10px/30px "Comfortaa", "arial";
+    color: rgb(255, 246, 246);
+    display: block;
+    width: 150px;
+    text-align: center;
+    transition: 0.5s;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+#content1 > .inner > .wrap > article span {
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
+}
+@keyframes animate {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 0.7;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+#content1 > .inner > .wrap > article:first-child > a {
+    color: #fff;
+}
+
+/* tab */
+.tab {
+    margin-top: 100px;
+    width: 100%;
+    padding: 0px 150px;
+    box-sizing: border-box;
+    background-color: rgba(199, 34, 34, 0.99);
+}
+.tab > .inner {
+    width: 1180px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.tab > .inner > h1 {
+    font: bold 24px/1 "Comfortaa", "arial";
+    color: #555;
+    text-align: center;
+    text-transform: uppercase;
+}
+.tab > .inner > .wrap {
+    width: 100%;
+}
+.tab > .inner > .wrap::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.tab > .inner > .wrap > .left {
+    float: left;
+    width: 35%;
+    height: 600px;
+    padding: 80px 104px 60px;
+    box-sizing: border-box;
+    background-color: rgb(54, 54, 54);
+}
+.tab > .inner > .wrap > .left > p {
+    font: 9px/1 "Comfortaa", "arial";
+    color: rgba(255, 255, 255, 0.715);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.tab > .inner > .wrap > .left > h2 {
+    font: bold 104px/1 "arial";
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+.tab > .inner > .wrap > .left h3 {
+    font: 15px/1 "Comfortaa", "arial";
+    color: #888;
+}
+
+.tab > .inner > .wrap > .left ul {
+    position: relative;
+}
+.tab > .inner > .wrap > .left li {
+    padding: 30px 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-top: 1px solid #999;
+}
+.tab > .inner > .wrap > .left li.on h3{
+    color: rgb(165, 28, 28);
+}
+.tab > .inner > .wrap > .left li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.tab > .inner > .wrap > .right {
+    float: left;
+    width: 65%;
+    position: relative;
+}
+.tab > .inner > .wrap > .right:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.tab > .inner > .wrap > .right > div {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+}
+.tab > .inner > .wrap > .right .on {
+    opacity: 1;
+    
+}
+.tab > .inner > .wrap > .right > div h2 {
+    /* font: 150px/1  'Bungee', "arial", cursive; */
+    font: 200px/1  'Anton', "arial", sans-serif;
+    color: rgba(134, 10, 10, 0.215);
+    /* text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3); */
+    position: absolute;
+    top: 100px;
+    left: 120px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.tab > .inner > .wrap > .right > div > p{
+    position: absolute;
+    height: 700px;
+    top: -200px;
+    right: -30px;
+    overflow: hidden;
+    /* z-index: 2; */
+    transition: 0.5s;
+    transform: translateX(540px);
+}
+.tab > .inner > .wrap > .right > .on > p{
+    transform: translateX(140px);
+}
+
+.tab > .inner > .wrap > .right> div > p > img{
+    width: 100%;
+
+}
+.tab > .inner > .wrap > .right .txt {
+    width: 250px;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    margin-left: 0px;
+}
+.tab > .inner > .wrap > .right .txt h3 {
+    font: bold 13px/1 "Comfortaa", "arial";
+    color: #333;
+    margin-bottom: 10px;
+    
+}
+.tab > .inner > .wrap > .right .txt p {
+    font: 13px/1.2 "Comfortaa", "arial";
+    color: #ccc;
+    margin-bottom: 10px;
+}
+.tab > .inner > .wrap > .right .txt .arrow {
+    width: 40px;
+    height: 40px;
+    background-color: #363636;
+    box-shadow: 5px 5px 10px rgba(255, 0, 98, 0.7);
+    border-radius: 20px;
+    transition: 0.5s;
+    position: relative;
+}
+.tab > .inner > .wrap > .right .txt .arrow:hover {
+    background: linear-gradient(45deg, rgb(251, 67, 67), rgb(231, 0, 0));
+}
+
+.tab > .inner > .wrap > .right .txt .arrow span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 4px solid #fff;
+    transition: 0.5s;
+    top: 50%;
+    right: 35%;
+    transform: translateY(-50%) rotate(-45deg);
+    border-left-style: none;
+    border-top-style: none;
+}
+.tab > .inner > .wrap > .right .txt .arrow span::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 4px;
+    background-color: #fff;
+    transform-origin: right;
+    transform: rotate(45deg) translate(1.5px, 10px) scaleX(0);
+    transition: 0.5s;
+}
+.tab > .inner > .wrap > .right .txt .arrow:hover span {
+    right: 25%;
+}
+.tab > .inner > .wrap > .right .txt .arrow:hover span::before {
+    transform: rotate(45deg) translate(1.5px, 10px) scaleX(1);
+}
+
+/* #content2 */
+
+#content2 {
+    width: 100%;
+    padding: 150px 0;
+    box-sizing: border-box;
+    position: relative;
+}
+#content2 > .inner {
+    width: 1180px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+#content2 > .inner > h1 {
+    font: bold 24px/1 "Comfortaa", "arial";
+    color: #555;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 100px;
+}
+#content2 > .inner > .wrap {
+    width: 100%;
+}
+#content2 > .inner > .wrap::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#content2 > .inner > .wrap > article {
+    position: relative;
+    float: left;
+    width: 280px;
+    height: 390px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    background-color: rgb(80, 80, 80);
+    padding: 20px 20px;
+    box-sizing: border-box;
+    color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.5s;
+}
+#content2 > .inner > .wrap > article::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: #fff;
+    transform: skew(2deg, 2deg);
+    z-index: -1;
+}
+#content2 > .inner > .wrap > article:nth-child(n)::before {
+    background: linear-gradient(315deg, rgb(255, 0, 0), rgb(255, 0, 64));
+}
+/* #content2 > .inner > .wrap > article:nth-child(even)::before {
+    background: linear-gradient(315deg, rgb(255, 0, 0), rgb(255, 0, 64));
+} */
+
+#content2 > .inner > .wrap > article::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+#content2 > .inner > .wrap > article > div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    height: 90px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgba(240, 240, 240, 0.99);
+    transition: 0.5s;
+    transform: translateY(90px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+}
+#content2 > .inner > .wrap > article:hover > div {
+    transform: translateY(0px);
+    opacity: 1;
+    visibility: visible;
+}
+
+#content2 > .inner > .wrap > article:nth-of-type(4n) {
+    margin-right: 0;
+}
+#content2 > .inner > .wrap > article > a:last-child {
+    margin-right: 0;
+}
+#content2 > .inner > .wrap > article > div > h2 {
+    font: bold 14px/1 "Comfortaa", "arial";
+    color: #444;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+#content2 > .inner > .wrap > article > div > a {
+    display: inline-block;
+    text-align: center;
+    font: 13px/32px "Comfortaa", "arial";
+    color: rgb(199, 34, 34);
+    transition: 0.5s;
+}
+#content2 > .inner > .wrap > article > div > a:last-child {
+    float: right;
+}
+#content2 > .inner > .wrap > article > div > a > i {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(199, 34, 34);
+    color: #efefef;
+    font-size: 10px;
+    line-height: 20px;
+}
+
+#content2 > .inner > .wrap > article:nth-of-type(6) {
+    background-image: url(../img/photo-1571493835239-69b6a9f4229a.jfif);
+}
+#content2 > .inner > .wrap > article:nth-of-type(2) {
+    background-image: url(../img/photo-1536338701933-9fb6ce505c48.jfif);
+}
+
+#content2 > .inner > .wrap > article:nth-of-type(3) {
+    background-image: url(../img/photo-1518366352543-6609db5ccdef.jfif);
+}
+#content2 > .inner > .wrap > article:nth-of-type(8) {
+    background-image: url(../img/photo-1541787416242-91d0bae0a4b2.jfif);
+}
+#content2 > .inner > .wrap > article:nth-of-type(5) {
+    background-image: url(../img/photo-1548666006-a8296ec63c89.jfif);
+}
+
+#content2 > .inner > .wrap > article:nth-of-type(4) {
+    background-image: url(../img/photo-1552961449-a90c5f2a8179.jfif);
+}
+#content2 > .inner > .wrap > article:nth-of-type(7) {
+    background-image: url(../img/photo-1562185669-3eca86dc3406.jfif);
+}
+#content2 > .inner > .wrap > article:nth-of-type(1) {
+    background-image: url(../img/photo-1556798939-60ea9f2e08f2.jfif);
+}
+
+#content2 > .border_txt {
+    display: block;
+    width: 200px;
+    margin: 0px auto;
+    border: 1px solid rgb(165, 28, 28);
+    padding: 10px 40px;
+    box-sizing: border-box;
+    border-radius: 100px;
+}
+
+#content3 > .border_txt {
+    display: block;
+    width: 200px;
+    margin: 0px auto;
+    border: 1px solid #000;
+    padding: 10px 40px;
+    box-sizing: border-box;
+    border-radius: 100px;
+    text-align: center;
+}
+#content2 > .border_txt::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#content2 > .border_txt > a {
+    font: bold 15px/1 "Comfortaa", "arial";
+    color: rgb(165, 28, 28);
+    position: relative;
+    display: block;
+}
+
+#content3 > .border_txt > a {
+    font: bold 15px/1 "Comfortaa", "arial";
+    color: #000;
+    position: relative;
+    display: block;
+}
+#content2 > .border_txt > a i,
+#content3 > .border_txt > a i {
+    transition: 0.5s;
+    position: absolute;
+    right: 0;
+}
+#content2 > .border_txt > a:hover i,
+#content3 > .border_txt > a:hover i {
+    transform: rotate(360deg) scale(1.3);
+}
+
+/* mockup , content4*/
+#content4 {
+    padding: 100px 0;
+    position: relative;
+}
+#content4::before {
+    content: "";
+    position: absolute;
+    top: 17%;
+    left: 0;
+    width: 100%;
+    padding-bottom: 30%;
+    background: rgba(199, 34, 34, 1);
+    transform: skewY(10deg);
+    z-index: -1;
+}
+#content4 > .inner {
+    width: 1180px;
+    margin: 0px auto;
+}
+#content4 > .inner::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#content4 > .inner > .left {
+    float: left;
+    width: 35%;
+    padding: 170px 0;
+    box-sizing: border-box;
+}
+#content4 > .inner > .left h2 {
+    font: bold 18px/1.2 "Comfortaa", "arial";
+    color: #333;
+    margin-bottom: 30px;
+}
+#content4 > .inner > .left p {
+    font: 12px/1.2 "Comfortaa", "arial";
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+#content4 > .inner > .left ul {
+    margin-bottom: 30px;
+}
+#content4 > .inner > .left ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#content4 > .inner > .left ul li {
+    float: left;
+    width: 47%;
+    height: 40px;
+    margin-left: 3%;
+}
+#content4 > .inner > .left ul li:first-child {
+    margin-left: 0%;
+}
+#content4 > .inner > .left ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    font: bold 12px/40px "Comfortaa", "arial";
+    color: #666;
+    text-align: center;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.37);
+}
+#content4 > .inner > .left ul li:hover a {
+    background-color: #222;
+    color: #fff;
+}
+#content4 > .inner > .left strong {
+    font: bold 14px/1 "Comfortaa", "arial";
+    color: #444;
+}
+#content4 > .inner > .right {
+    float: left;
+    width: 65%;
+    padding: 0px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+#content4 > .inner > .right > img {
+    width: 100%;
+}
+
+/* #content3  */
+#content3 {
+    padding: 200px 0;
+}
+#content3 p {
+    color: #000;
+    width: 1180px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#content3 > .inner {
+    width: 1180px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+#content3 > .inner > .wrap {
+    width: 100%;
+}
+#content3 > .inner > .wrap::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#content3 > .inner > .wrap > div {
+    float: left;
+    width: calc((100% - 25px) / 6);
+    margin-left: 5px;
+    text-align: center;
+    position: relative;
+}
+#content3 > .inner > .wrap > div::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.13);
+}
+#content3 > .inner > .wrap > div:first-child {
+    margin-left: 0px;
+}
+#content3 > .inner > .wrap > div > a {
+    font: bold 14px/1 "Comfortaa", "arial";
+    color: #fff;
+    display: block;
+    padding: 55px 30px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+#content3 > .inner > .wrap > div:nth-of-type(1) {
+    background: url(../img/insta2.jpg) no-repeat center/cover;
+}
+#content3 > .inner > .wrap > div:nth-of-type(2) {
+    background: url(../img/insta5.jpg) no-repeat center/cover;
+}
+#content3 > .inner > .wrap > div:nth-of-type(3) {
+    background: url(../img/insta6.jpg) no-repeat center/cover;
+}
+#content3 > .inner > .wrap > div:nth-of-type(4) {
+    background: url(../img/insta7.jpg) no-repeat center/cover;
+}
+#content3 > .inner > .wrap > div:nth-of-type(5) {
+    background: url(../img/insta8.jpg) no-repeat center/cover;
+}
+#content3 > .inner > .wrap > div:nth-of-type(6) {
+    background: url(../img/insta9.jpg) no-repeat center/cover;
+}
+
+@media screen and (max-width: 1179px) {
+    /* visual */
+
+    #visual {
+        width: 100%;
+        height: 600px;
+    }
+    #visual > .inner > li {
+        width: 100%;
+        height: 100%;
+        padding: 250px 20px;
+    }
+    #visual > .inner > .box > .wrap {
+        width: 100%;
+        margin: 0 auto;
+    }
+    #visual > .inner > .box > .wrap > .left {
+        width: 450px;
+    }
+    #visual > .inner > .box > .wrap > .left h1 {
+        font: 35px/1 "Galada", "arial";
+    }
+    #visual > .inner > .box > .wrap > .left p {
+        font: bold 15px/1 "Comfortaa", "arial";
+    }
+
+    /* content1 */
+    #content1 {
+        width: 100%;
+        padding: 50px 0;
+    }
+    #content1 > .inner {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    #content1 > .inner > .wrap {
+        width: 100%;
+    }
+    #content1 > .inner > .wrap > article {
+        float: left;
+    }
+    #content1 > .inner > .wrap > article:nth-of-type(1) {
+        width: 100%;
+        margin-bottom: 20px;
+        height: 300px;
+    }
+    #content1 > .inner > .wrap > article:nth-of-type(2),
+    #content1 > .inner > .wrap > article:nth-of-type(3),
+    #content1 > .inner > .wrap > article:nth-of-type(4),
+    #content1 > .inner > .wrap > article:nth-of-type(5) {
+        width: 49%;
+        margin-bottom: 2%;
+        margin-right: 2%;
+    }
+    #content1 > .inner > .wrap > article:nth-of-type(2n-1) {
+        margin-right: 0%;
+    }
+
+    /* tab */
+    .tab {
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .tab > .inner {
+        width: 100%;
+
+    }
+ 
+.tab > .inner > .wrap {
+    width: 100%;
+}
+.tab > .inner > .wrap > .left {
+    float: left;
+    width: 35%;
+}
+.tab > .inner > .wrap > .left > h2{
+    font: bold 64px/1 "arial";
+}
+.tab > .inner > .wrap > .right {
+    float: left;
+    width: 65%;
+    position: relative;
+}
+.tab > .inner > .wrap > .right > div > p{
+
+    right: 130px;
+}
+.tab > .inner > .wrap > .right > div h2{
+    font: 135px/1  'Anton', "arial", sans-serif;
+}
+
+.tab > .inner > .wrap > .right .txt {
+    width: 250px;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    margin-left: 0px;
+}
+
+.tab > .inner > .wrap > .right .txt h3 {
+    font: bold 13px/1 "Comfortaa", "arial";
+    color: #333;
+    margin-bottom: 10px;
+    
+}
+.tab > .inner > .wrap > .right .txt p {
+    font: 13px/1.2 "Comfortaa", "arial";
+    color: #000;
+    margin-bottom: 10px;
+}
+
+    /* #content2 */
+
+    #content2 {
+        padding: 100px 0;
+    }
+    #content2 > .inner {
+        width: 100%;
+    }
+    #content2 > .inner > .wrap {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    #content2 > .inner > .wrap > article {
+        float: left;
+        width: 49%;
+        margin-right: 2%;
+        box-sizing: border-box;
+    }
+
+    #content2 > .inner > .wrap > article:nth-of-type(2n) {
+        margin-right: 0%;
+    }
+
+    #content2 > .inner > .wrap > article > div {
+        width: 100%;
+    }
+
+    #content2 > .border {
+        width: 100%;
+        height: 200px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    /* content4     */
+
+    #content4 {
+        padding: 100px 0;
+    }
+    #content4 > .inner {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    #content4 > .inner > .left {
+        float: left;
+        width: 40%;
+        padding: 130px 0;
+        box-sizing: border-box;
+    }
+
+    #content4 > .inner > .right {
+        float: right;
+        width: 60%;
+        padding: 0px;
+        margin-top: 120px;
+
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    /* #content3 */
+    #content3 {
+        padding: 100px 0;
+    }
+    #content3 p {
+        width: 100%;
+    }
+    #content3 > .inner {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    #content3 > .inner > .wrap > div {
+        width: calc((100% - 5px) / 2);
+        margin-bottom: 5px;
+        box-sizing: border-box;
+    }
+    #content3 > .inner > .wrap > div:nth-of-type(2n-1) {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 539px) {
+    /* visual */
+
+    #visual {
+        width: 100%;
+        height: 600px;
+    }
+    #visual > .inner > li {
+        width: 100%;
+        height: 100%;
+        padding: 250px 20px;
+    }
+    #visual > .inner > .box > .wrap {
+        width: 100%;
+        margin: 0 auto;
+    }
+    #visual > .inner > .box > .wrap > .left {
+        width: 400px;
+    }
+    #visual > .inner > .box > .wrap > .right {
+        width: 180px;
+    }
+    #visual > .inner > .box > .wrap > .left h1 {
+        font: 25px/1 "Galada", "arial";
+    }
+    #visual > .inner > .box > .wrap > .left p {
+        font: bold 15px/1 "Comfortaa", "arial";
+    }
+
+    /* content1 */
+
+    #content1 > .inner > .wrap > article:nth-of-type(2),
+    #content1 > .inner > .wrap > article:nth-of-type(3),
+    #content1 > .inner > .wrap > article:nth-of-type(4),
+    #content1 > .inner > .wrap > article:nth-of-type(5) {
+        width: 100%;
+    }
+    #content1 > .inner > .wrap > article:nth-of-type(2n-1) {
+        margin-right: 0%;
+    }
+
+    /* tab */
+    .tab {
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .tab > .inner {
+        width: 100%;
+
+    }
+ 
+.tab > .inner > .wrap {
+    width: 100%;
+}
+.tab > .inner > .wrap > .left {
+    float: none;
+    width: 100%;
+}
+.tab > .inner > .wrap > .left > h2{
+    font: bold 94px/1 "arial";
+}
+.tab > .inner > .wrap > .right {
+    float: none;
+    display: none;
+}
+
+    /* #content2 */
+
+    #content2 > .inner > .wrap > article {
+        width: 100%;
+        min-height: 300px;
+    }
+    #content2 > .border {
+        width: 100%;
+        height: 160px;
+        margin: -80px auto;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    /* content4 */
+
+    #content4 {
+        padding: 100px 0;
+    }
+
+    #content4::before {
+        top: 10%;
+        padding-bottom: 80%;
+    }
+    #content4 > .inner {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    #content4 > .inner > .left {
+        float: none;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    #content4 > .inner > .right {
+        float: none;
+        width: 100%;
+        padding: 0px;
+        box-sizing: border-box;
+        position: relative;
+        margin-top: 50px;
+    }
+
+    /* #content3 */
+    #content3 > .inner > .wrap > div {
+        width: 100%;
+        margin-bottom: 5px;
+        box-sizing: border-box;
+        margin-left: 0px;
+    }
+}

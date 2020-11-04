@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Location </title>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d416bb2679af1d0976bfa7d1e6b47512"></script>
+    <script src="js/index.js"></script>
+    <script src="js/map.js"></script>    
+    <script src="https://kit.fontawesome.com/cc918a0d21.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sub_layout.css">
+    <link rel="stylesheet" href="css/location.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+  <header id="header"> 
+      <div class="inner">
+          <h1>
+            <a href="index.html">What<span>company</span></a>
+            </h1>
+          <ul class="gnb">
+            <li><a href="department.html">department</a>
+                <ul class="gnbSub">
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li> 
+                    <li>lorem ipsum</li>
+                </ul>
+            </li>
+            <li><a href="community.html">community</a>
+                <ul class="gnbSub">
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                </ul>
+            </li>
+            <li><a href="members.html">members</a>
+                <ul class="gnbSub">
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                </ul>
+            </li>
+            <!-- <li>
+                        <a href="gallery.html">gallery</a>
+                        <ul class="gnbSub">
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                        </ul>
+                    </li> -->
+                    <li>
+                        <a href="interactiveWeb.html">interactiveWeb</a>
+                        <ul class="gnbSub">
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                        </ul>
+                    </li>
+            <li><a href="location.html">location</a>
+                <ul class="gnbSub">
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                    <li>lorem ipsum</li>
+                </ul>
+            </li>
+        </ul>
+          <ul class="util">
+              <li><a href="#"><i class="fas fa-search"></i></a></li>
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Sign Up</a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+          <!-- 웹메뉴버튼 -->
+          <a href="#" class="menuBtn">
+            <i class="fas fa-bars"></i>
+          </a>
+      </div>
+  </header>
+   <!-- 모바일메뉴 -->
+   <section id="gnb_mo">
+    <ul>
+        <li>
+            <a href="index.html">home</a>
+        </li>
+        <li>
+            <a href="department.html">department</a>
+        </li>
+        <li>
+            <a href="community.html">community</a>
+        </li>
+        <li>
+            <a href="members.html">members</a>
+        </li>
+       <!-- <li>
+                    <a href="gallery.html">gallery</a>
+                </li> -->
+                <li>
+                    <a href="interactiveWeb.html">interactiveWeb</a>
+                </li>
+        <li>
+            <a href="location.html">location</a>
+        </li>
+    </ul>
+</section>
+
+
+   <!-- location 시작 -->
+   
+  <section class="content location">
+      <div class="sub_visual"></div>
+      <!-- inner -->
+      <div class="inner">
+          <div class="inner_header">
+            <h1>location</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+            <div id="map"></div>
+            <!-- 주소 -->
+            <article class="address">
+                <div class="wrap">
+                    <div class="icon">
+                        <i class="far fa-address-book"></i>
+                    </div>
+                    <div class="text">
+                        <h2>주소 및 연락처</h2>
+                        <p><span>주소</span>서울시 마포구 월드컵북로</p>
+                        <p><span>팩스</span>02-2222-3729</p>
+                    </div>
+                </div>
+            </article>
+            <!-- 주소끝 -->
+            <!-- 버스 -->
+            <article class="bus">
+                <div class="wrap">
+                    <div class="icon">
+                        <i class="fas fa-bus-alt"></i>
+                    </div>
+                    <div class="text">
+                        <h2>버스 이용 시</h2>
+                        <p><span>간선버스</span>171, 271, 470, 673 </p>
+                        <p><span>광역버스</span>9711A </p>
+                    </div>
+                </div>
+            </article>
+            <!-- 버스끝 -->
+            <!-- 지하철 -->
+            <article class="subway">
+                <div class="wrap">
+                    <div class="icon">
+                        <i class="fas fa-subway"></i>
+                    </div>
+                    <div class="text">
+                        <h2>지하철 이용 시</h2>
+                        <p>6호선 디지털미디어시티역 2번 출구</p>
+                        <p>(6715, 7711, 7730)</p>
+                    </div>
+                </div>
+            </article>
+            <!-- 버스끝 -->
+        </div>
+       
+        
+
+        
+
+      </div>
+      <!-- inner -->
+  </section>
+  
+<!-- location 끝 -->
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="wrap">
+                <div>
+                    <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, maxime.</h1>
+                </div>
+                <div>
+                    <address>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. <i class="fas fa-location-arrow"></i>            
+                        <span>tmdgp523@naver.com</span>
+                    </address>
+                </div>
+                <div>
+                        <p>Follow SEUNGHYE</p>
+                        <div class="icons">
+                            <i class="fas fa-heading"></i>
+                            <i class="fas fa-font"></i>
+                            <i class="fas fa-bold"></i>
+                        </div>
+                </div>
+            </div>
+            <p>
+                Copyright &copy; 2020 SEUNGHYE All Right reserved.
+            </p>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>

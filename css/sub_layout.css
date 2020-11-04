@@ -1,0 +1,298 @@
+@charset "utf-8";
+
+/* header */
+#header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    perspective: 800px;
+}
+#header > .inner {
+    width: 1180px;
+    height: 140px;
+    margin: 0 auto;
+    position: relative;
+}
+#header > .inner > h1 {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+}
+#header > .inner > h1 > a {
+    font: bold 30px/1 "Comfortaa", "arial";
+    color: rgb(240, 240, 240);
+    text-transform: uppercase;
+}
+#header > .inner > h1 > a > span {
+    font-weight: normal;
+    color: rgb(190, 190, 190);
+}
+#header > .inner > .gnb {
+    position: absolute;
+    right: 0;
+    top: 40%;
+}
+#header > .inner > .gnb::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#header > .inner > .gnb > li {
+    float: left;
+    height: 50px;
+}
+#header > .inner > .gnb > li > a {
+    font: bold 14px/60px "Comfortaa", "arial";
+    color: rgb(240, 240, 240);
+    padding: 0 20px;
+    width: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+#header > .inner > .gnb > li > a:hover {
+    color: #fff;
+}
+#header > .inner > .gnb > li > .gnbSub {
+    visibility: hidden;
+    opacity: 0;
+    transform: rotateY(360deg);
+    transition: 1s;
+    filter: blur(20px);
+}
+#header > .inner > .gnb > li:hover .gnbSub {
+    visibility: visible;
+    opacity: 1;
+    transform: rotateY(0deg);
+    filter: blur(0px);
+}
+.gnbSub > li {
+    font: bold 12px/60px "Comfortaa", "arial";
+    color: #fff;
+    padding: 0;
+    text-align: center;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.23);
+}
+.gnbSub > li:hover {
+    background: rgba(255, 255, 255, 0.53);
+}
+#header > .inner > .util {
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+#header > .inner > .util > li {
+    float: left;
+    margin-right: 20px;
+}
+#header > .inner > .util > li > a,
+#header > .inner > .util > li > a > i {
+    font-size: 11px;
+    color: rgb(240, 240, 240);
+}
+/* menuBtn */
+#header > .inner > .menuBtn {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 40px;
+    color: rgb(199, 34, 34);
+    opacity: 0;
+    transition: 1s;
+    transform: translateY(-100%) scale(0.8);
+}
+
+/* inner_header */
+.content > .inner > .inner_header {
+    width: 100%;
+    text-align: center;
+    margin: 100px 0;
+}
+.content > .inner > .inner_header > h1 {
+    font: normal 30px/1 "Comfortaa", "arial";
+    color: #777;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.content > .inner > .inner_header > p {
+    font: normal 14px/1 "Comfortaa", "arial";
+    color: #444;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* 모바일메뉴 */
+
+#gnb_mo {
+    width: 80%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    top: 0;
+    left: -80%;
+    transition: 1s;
+    z-index: 10;
+}
+#gnb_mo.on {
+    left: 0;
+}
+#gnb_mo ul {
+    text-align: center;
+}
+#gnb_mo ul li {
+    padding: 30px 30px;
+    box-sizing: border-box;
+}
+#gnb_mo ul li a {
+    display: block;
+    text-transform: uppercase;
+    font: bold 18px/1.3 "Comfortaa", "arial";
+    color: #fff;
+}
+
+/* content */
+.content {
+    width: 100%;
+}
+.content > .inner {
+    width: 1180px;
+    min-height: 500px;
+    margin: 120px auto 250px;
+    position: relative;
+    transition: 0.5s;
+}
+
+/* footer */
+#footer {
+    width: 100%;
+    background: #333;
+    margin-top: -50px;
+}
+#footer > .inner {
+    width: 1180px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+#footer > .inner > .wrap {
+    margin-bottom: 30px;
+}
+#footer > .inner > .wrap::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#footer > .inner > .wrap > div {
+    float: left;
+    margin-right: 40px;
+    box-sizing: border-box;
+}
+#footer > .inner > .wrap > div:nth-of-type(1) {
+    width: 600px;
+}
+#footer > .inner > .wrap > div:nth-of-type(1) > h1 {
+    font: bold 24px/1.3 "Comfortaa", "arial";
+    color: #efefef;
+}
+#footer > .inner > .wrap > div:nth-of-type(2) {
+    width: 275px;
+}
+#footer > .inner > .wrap > div:nth-of-type(2) > address {
+    font-style: normal;
+    font: bold 14px/1.3 "Comfortaa", "arial";
+    letter-spacing: 1px;
+    color: #efefef;
+}
+#footer > .inner > .wrap > div:nth-of-type(2) > address > i {
+    margin-bottom: 20px;
+    color: rgb(199, 34, 34);
+}
+#footer > .inner > .wrap > div:nth-of-type(2) > address > span {
+    font: 12px/1 "Comfortaa", "arial";
+    color: #888;
+}
+#footer > .inner > .wrap > div:nth-of-type(3) {
+    width: 200px;
+    margin-right: 0px;
+    font: bold 12px/1.7 "Comfortaa", "arial";
+    letter-spacing: 1px;
+    color: #888;
+}
+#footer > .inner > .wrap > div:nth-of-type(3) > .icons > i {
+    margin-right: 10px;
+    color: #efefef;
+}
+#footer > .inner > p {
+    font: bold 12px/1 "arial";
+    color: #666;
+}
+
+@media screen and (max-width: 1179px) {
+    /* header */
+
+    #header > .inner {
+        width: 100%;
+        height: 80px;
+    }
+    #header > .inner > h1 {
+        bottom: 15px;
+        left: 20px;
+    }
+    #header > .inner > .gnb {
+        display: none;
+    }
+    #header > .inner > .util {
+        display: none;
+    }
+
+    /* content */
+    .content > .inner {
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    /* menuBtn */
+    #header > .inner > .menuBtn {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    /* footer */
+
+    #footer > .inner {
+        width: 100%;
+        padding: 80px 20px;
+        box-sizing: border-box;
+    }
+    #footer > .inner > .wrap > div {
+        margin-right: 0;
+    }
+    #footer > .inner > .wrap > div:nth-of-type(1) {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #footer > .inner > .wrap > div:nth-of-type(2) {
+        width: 49%;
+        margin-right: 2%;
+    }
+    #footer > .inner > .wrap > div:nth-of-type(3) {
+        width: 49%;
+        margin-right: 0%;
+    }
+}
+
+@media screen and (max-width: 539px) {
+    /* header */
+
+    /* footer */
+    #footer > .inner > .wrap > div:nth-of-type(2) {
+        width: 100%;
+    }
+    #footer > .inner > .wrap > div:nth-of-type(3) {
+        width: 100%;
+    }
+}

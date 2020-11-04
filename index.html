@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Main</title>
+        <script
+            src="https://kit.fontawesome.com/cc918a0d21.js"
+            crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/sub_layout.css" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap"
+            rel="stylesheet"
+        />
+        <link href="https://fonts.googleapis.com/css?family=Bungee&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+        <script src="js/jquery-2.1.1.min.js"></script>
+        <script src="js/myScroll.js"></script>
+        <script src="js/index.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".myScroll").myScroll({
+                    btns: "#navi>li",
+                    speed: 1000,
+                    base: 0,
+                    active: "on",
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <ul id="navi">
+            <li class="on"><a href="#header"></a></li>
+            <li><a href="#tab"></a></li>
+            <li><a href="#content2"></a></li>
+            <li><a href="#content4"></a></li>
+        </ul>
+
+        <!-- 헤더 로고및메뉴 시작 -->
+        <header id="header" class="myScroll">
+            <div class="inner">
+                <h1>
+                    <a href="index.html">What<span>company</span></a>
+                </h1>
+                <ul class="gnb">
+                    <li>
+                        <a href="department.html">department</a>
+                        <ul class="gnbSub">
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="community.html">community</a>
+                        <ul class="gnbSub">
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="members.html">members</a> 
+                        <ul class="gnbSub">
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                        </ul>
+                    </li>
+                    <!-- <li>
+                        <a href="gallery.html">gallery</a>
+                        <ul class="gnbSub">
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                        </ul>
+                    </li> -->
+                    <li>
+                        <a href="interactiveWeb.html">interactiveWeb</a>
+                        <ul class="gnbSub">
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="location.html">location</a>
+                        <ul class="gnbSub">
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                            <li>lorem ipsum</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="util">
+                    <li>
+                        <a href="#"><i class="fas fa-search"></i></a>
+                    </li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                    <li>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                </ul>
+                <!-- 웹메뉴버튼 -->
+                <a href="#" class="menuBtn">
+                    <i class="fas fa-bars"></i>
+                </a>
+            </div>
+        </header>
+        <!-- 모바일메뉴 -->
+        <section id="gnb_mo">
+            <ul>
+                <li>
+                    <a
+                        style="font-size: bold; color: rgb(255, 44, 44);"
+                        href="index.html"
+                        >home</a
+                    >
+                </li>
+                <li>
+                    <a href="department.html">department</a>
+                </li>
+                <li>
+                    <a href="community.html">community</a>
+                </li>
+                <li>
+                    <a href="members.html">members</a>
+                </li>
+                <!-- <li>
+                    <a href="gallery.html">gallery</a>
+                </li> -->
+                <li>
+                    <a href="interactiveWeb.html">interactiveWeb</a>
+                </li>
+                <li>
+                    <a href="location.html">location</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- 비주얼 시작 -->
+        <figure id="visual">
+            <ul class="inner">
+                <li class="box on" id="box1">
+                    <div class="wrap">
+                        <div class="left">
+                            <h1>
+                                _Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit1.
+                            </h1>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                        <div class="right">
+                            <h1>Next</h1>
+                            <p>Page</p>
+                            <a href="#" class="rightBtn"
+                                ><i class="fas fa-caret-right"></i
+                            ></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="box" id="box2">
+                    <div class="wrap">
+                        <div class="left">
+                            <h1>_Lorem ipsum dolor sit amet2.</h1>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                        <div class="right">
+                            <h1>Next</h1>
+                            <p>Page</p>
+                            <a href="#" class="rightBtn"
+                                ><i class="fas fa-caret-right"></i
+                            ></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="box" id="box3">
+                    <div class="wrap">
+                        <div class="left">
+                            <h1>
+                                _Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit3.
+                            </h1>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                        <div class="right">
+                            <h1>Next</h1>
+                            <p>Page</p>
+                            <a href="#" class="rightBtn"
+                                ><i class="fas fa-caret-right"></i
+                            ></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </figure>
+
+        <div class="wrap">
+            <!-- 컨텐츠1 시작 -->
+            <section id="content1" class="myScroll">
+                <div class="inner">
+                    <div class="wrap">
+                        <article>
+                            <h1>Lorem ipsum dolor sit.</h1>
+                            <h2>Lorem ipsum dolor sit.</h2>
+                            <p>
+                                Lorem ipsum dolor, sit amet consectetur
+                                adipisicing.
+                            </p>
+                            <a href="#">CLICK DETAIL</a>
+                        </article>
+                        <article>
+                            <h1>Lorem ipsum dolor sit.</h1>
+                            <h2>Lorem ipsum dolor sit.</h2>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <a href="#">CLICK DETAIL</a>
+                        </article>
+                        <article>
+                            <h1>Lorem ipsum dolor sit.</h1>
+                            <h2>Lorem ipsum dolor sit.</h2>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <a href="#">CLICK DETAIL</a>
+                        </article>
+                        <article>
+                            <h1>Lorem ipsum dolor sit.</h1>
+                            <h2>Lorem ipsum dolor sit.</h2>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <a href="#">CLICK DETAIL</a>
+                        </article>
+                        <article>
+                            <h1>Lorem ipsum dolor sit.</h1>
+                            <h2>Lorem ipsum dolor sit.</h2>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <a href="#">CLICK DETAIL</a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <!-- 탭 컨첸트 시작 -->
+            <section class="tab" id="tab" class="myScroll">
+                <div class="inner">
+                    <article class="wrap">
+                        <div class="left">
+                            <p>HOW WOULD YOU</p>
+                            <h2>Benefit</h2>
+                            <ul>
+                                <li class="on">
+                                    <a><h3>Technology</h3></a>
+                                </li>
+                                <li>
+                                    <a><h3>Advisor</h3></a>
+                                </li>
+                                <li>
+                                    <a><h3>Balancing</h3></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <div class="tab on" id="tab1">
+                                <h2>Technology</h2>
+                                <p><img src="img/man.png" alt="" /></p>
+                                <div class="txt">
+                                    <h3>Technology</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Eos veniam consectetur
+                                        eum, dicta sit facere!Lorem ipsum dolor
+                                        sit amet consectetur adipisicing elit.
+                                        Eos veniam consectetur eum, dicta sit
+                                        facere!
+                                    </p>
+                                    <div class="arrow">
+                                        <a href="#"><span></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab" id="tab2">
+                                <h2>Advisor</h2>
+                                <p><img src="" alt="" /></p>
+                                <div class="txt">
+                                    <h3>Advisor</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Eos veniam consectetur
+                                        eum, dicta sit facere!
+                                    </p>
+                                    <div class="arrow">
+                                        <a href="#"><span></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab" id="tab3">
+                                <h2>Balancing</h2>
+                                <p><img src="img/man3.png" alt="" /></p>
+                                <div class="txt">
+                                    <h3>Balancing</h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Eos veniam consectetur
+                                        eum, dicta sit facere!
+                                    </p>
+                                    <div class="arrow">
+                                        <a href="#"><span></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+            <!-- 박스8개 content2 시작 -->
+            <section id="content2" class="myScroll">
+                <div class="inner">
+                    <h1>Lorem, ipsum dolor.</h1>
+                    <div class="wrap">
+                        <article>
+                            <div>
+                                <h2>Lorem ipsum dolor sit.</h2>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#"><i class="fas fa-bookmark"></i></a>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Lorem ipsum dolor sit.</h2>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#"><i class="fas fa-bookmark"></i></a>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Lorem ipsum dolor sit.</h2>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#"><i class="fas fa-bookmark"></i></a>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Lorem ipsum dolor sit.</h2>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#"><i class="fas fa-bookmark"></i></a>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Lorem ipsum dolor sit.</h2>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#"><i class="fas fa-bookmark"></i></a>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Lorem ipsum dolor sit.</h2>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#"><i class="fas fa-bookmark"></i></a>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Lorem ipsum dolor sit.</h2>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#"><i class="fas fa-bookmark"></i></a>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <h2>Lorem ipsum dolor sit.</h2>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#">Lorem ipsum</a>
+                                <a href="#"><i class="fas fa-bookmark"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="border_txt">
+                    <a href="#">
+                        <span>View more</span>
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+            </section>
+            <!-- 사선배경화면 content4 시작 -->
+            <section id="content4" class="myScroll">
+                <div class="inner">
+                    <article class="left">
+                        <h2>
+                            Lorem, ipsum dolor sit amet adipisicing.<br />
+                            Dicta, molestias.
+                        </h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Cum soluta consequatur ex vel aliquid
+                            repellendus.
+                        </p>
+                        <ul>
+                            <li>
+                                <a href="#">Content Button</a>
+                            </li>
+                            <li>
+                                <a href="#">Section Button</a>
+                            </li>
+                        </ul>
+                        <strong
+                            >Lorem ipsum dolor, sit amet consectetur.</strong
+                        >
+                    </article>
+                    <article class="right">
+                        <img src="img/mockup.png" />
+                    </article>
+                </div>
+            </section>
+            <!-- 마지막 content3 시작 -->
+            <section id="content3" class="myScroll">
+                <div class="inner">
+                    <div class="wrap">
+                        <div><a href="#">Lorem ipsum dolor sit amet.</a></div>
+                        <div><a href="#">Lorem ipsum dolor sit amet.</a></div>
+                        <div><a href="#">Lorem ipsum dolor sit amet.</a></div>
+                        <div><a href="#">Lorem ipsum dolor sit amet.</a></div>
+                        <div><a href="#">Lorem ipsum dolor sit amet.</a></div>
+                        <div><a href="#">Lorem ipsum dolor sit amet.</a></div>
+                    </div>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
+                    deserunt.
+                </p>
+                <div class="border_txt">
+                    <a href="#">
+                        <span>Lorem ipsum</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- footer시작 -->
+
+            <footer id="footer">
+                <div class="inner">
+                    <div class="wrap">
+                        <div>
+                            <h1>
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Debitis, maxime.
+                            </h1>
+                        </div>
+                        <div>
+                            <address>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit.
+                                <i class="fas fa-location-arrow"></i>
+                                <span>tmdgp523@naver.com</span>
+                            </address>
+                        </div>
+                        <div>
+                            <p>Follow SEUNGHYE</p>
+                            <div class="icons">
+                                <i class="fas fa-heading"></i>
+                                <i class="fas fa-font"></i>
+                                <i class="fas fa-bold"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Copyright &copy; 2020 SEUNGHYE All Right reserved.
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

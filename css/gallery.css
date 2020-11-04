@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+/*sub_ visual */
+.content>.sub_visual{width: 100%; height: 360px; background-position: center; background-size: cover; position: relative;}
+.gallery >.sub_visual{background-image: url(../img/photo-1539984831038-a068fe437441.jfif);}
+
+/* insta */
+#insta{width: 100%; padding: 100px 0;}
+#insta::after{content: ''; display: block; clear: both;}
+#insta>article{float: left; width: 33.33%; padding: 12px; box-sizing: border-box;}
+#insta>article>.inner{width: 100%;border-radius: 3px; box-shadow:3px 3px 10px rgba(0, 0, 0, 0.163); padding: 10px; box-sizing: border-box; margin: 30px 10px; background: #fff; border: 1px solid #eee;}
+#insta>article>.inner>.pic{width: 100%; height: 250px; background-repeat: no-repeat; background-size: cover; background-position:center ; }
+#insta>article>.inner>p{width: 100%; height: 50px; font: 12px/1.2 '맑은 고딕', 'arial'; color: #888;margin-top: 30px;} 
+
+
+@media screen and (max-width:1179px){
+/* insta */
+
+#insta>article{width: 50%; }
+}
+
+@media screen and (max-width:539px){
+#insta>article{width: 100%; }
+    }

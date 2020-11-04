@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/*sub_ visual */
+.content>.sub_visual{width: 100%; height: 360px; background-position: center; background-size: cover; position: relative;}
+.location >.sub_visual{background-image: url(../img/photo-1583482183620-f692113aafc3.jfif);}
+/* inner_header */
+.content>.inner>.inner_header{width: 100%; text-align: center; margin: 100px 0;}
+.content>.inner>.inner_header>h1{font: normal 30px/1 'Comfortaa', 'arial'; color: #777; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px;}
+.content>.inner>.inner_header>p{font: normal 14px/1 'Comfortaa', 'arial'; color: #444; letter-spacing: 1px; text-transform: uppercase; }
+
+#map{width: 100%; border: 1px solid #aaa; height: 500px; margin-top: 100px; margin-bottom: 50px;}
+.location>.inner>article>.wrap{transition: 0.5s;}
+.location>.inner>article>.wrap::after{content: ''; display: block; clear: both;}
+.location>.inner>article>.wrap div{float: left; margin: 30px;transition: 0.5s;}
+.location>.inner>article>.wrap>.icon{width: 100px; height: 100px;  text-align: center; border-radius: 50%;}
+.location>.inner>article:nth-of-type(1)>.wrap>.icon{background: navy;}
+.location>.inner>article:nth-of-type(2)>.wrap>.icon{background: darkslategrey;}
+.location>.inner>article:nth-of-type(3)>.wrap>.icon{background: purple ;}
+.location>.inner>article>.wrap>.icon>i{font-size: 40px ; color: #fff; line-height: 100px; }
+.location>.inner>article>.wrap>.text{width: 80%; transition: 0.5s;}
+.location>.inner>article>.wrap>.text>h2{font: bold 20px/1 '맑은 고딕'; padding-bottom: 15px; border-bottom: 1px solid #eee;}
+.location>.inner>article>.wrap>.text>p{font: 12px/1 '맑은 고딕'; color:#666; padding-top: 15px;}
+.location>.inner>article>.wrap>.text>p>span{font:bold 14px/1 '맑은 고딕'; color:#444; padding-right: 10px;}
+.location>.inner>article>.wrap>.text>p>span::after{content: '|'; display: inline-block; padding-left: 10px; font-size: 14px; color: rgba(0,0,0,0.1);}
+
+
+@media screen and (max-width:1179px){
+    .location>.inner>article>.wrap>.text{width: 70%;}
+}
+
+@media screen and (max-width:539px){
+    
+    }
