@@ -8,11 +8,15 @@ div, section, header, footer, p, h1, h2 {
 	box-sizing: border-box;
 }
 a {
-	color: royalblue;
+	color: #c72222;
+	font-weight: bold;
 }
 img {
 	max-width: 100%;
 	height: auto;
+}
+.header{
+	text-align: center;
 }
 .global-width{
 	max-width: 960px;
